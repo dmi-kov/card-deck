@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "2d00a9eb-8be8-44c0-842f-d40102fbbd65",
+		"name": "Card game API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new deck of cards",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"is_shuffled\": true,\n    \"cards\": [\"10H\", \"QD\", \"9H\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/v1/deck",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"v1",
+						"deck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open (get) deck by it's ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/v1/deck/d69341ed-6c82-4268-9fd9-f829837f726e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"v1",
+						"deck",
+						"d69341ed-6c82-4268-9fd9-f829837f726e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Draw N cards from deck",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"count\": 1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/v1/deck/c94f8382-ed2a-4c84-83fd-ba84a99f0a5f/cards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"v1",
+						"deck",
+						"c94f8382-ed2a-4c84-83fd-ba84a99f0a5f",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

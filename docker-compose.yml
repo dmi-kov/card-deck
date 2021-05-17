@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:12
+    container_name: games_postgres
+    environment:
+      POSTGRES_DATABASE: games
+      POSTGRES_USER: games
+      POSTGRES_PASSWORD: games
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5437:5432
+
+volumes:
+  pgdata:
+    driver: local
