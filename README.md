@@ -1,5 +1,6 @@
 # Card Deck
-##Implementing REST API over 52-card deck game 
+
+## Implementing REST API over 52-card deck game 
 
 ### Requirements
 * Go 1.16 or higher
