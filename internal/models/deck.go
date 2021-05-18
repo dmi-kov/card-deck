@@ -90,9 +90,9 @@ func DrawRandomNCars(count uint, codes []string) ([]string, error) {
 // RemoveDrawnCodes removes drawn codes from slice keeping order
 func RemoveDrawnCodes(drawnCodes, allCodes []string) []string {
 	for i := 0; i < len(allCodes); i++ {
-		url := allCodes[i]
+		code := allCodes[i]
 		for _, rem := range drawnCodes {
-			if url == rem {
+			if code == rem {
 				allCodes = append(allCodes[:i], allCodes[i+1:]...)
 				i--
 				break
