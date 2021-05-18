@@ -21,7 +21,7 @@
 * Run `make run` to start app in current terminal session
 * Run `make test && make fmt && make lint` before committing
 * Run `make help` to see all available commands
-* To extend API functionality add new handler into `internal/api` and init it
+* To extend API functionality add new handler into `internal/api/handler` and init it
 
 ### Database
 * Run `make start-db` to start Docker container with postgres
@@ -57,7 +57,7 @@ curl --request POST 'http://localhost:8083/v1/deck' \
     "cards": ["10S", "QS", "AD"]
 }'
 ```
-* Open Deck by provided deckID
+* Open deck by provided deckID
 ```
 curl http://localhost:8083/v1/deck/{deckID}
 ```
