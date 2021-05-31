@@ -11,13 +11,11 @@ import (
 	"syscall"
 	"time"
 
-	handler2 "github.com/card-deck/internal/api/handler"
-
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
-
+	"github.com/card-deck/internal/api/handler"
 	"github.com/card-deck/internal/config"
 	"github.com/card-deck/internal/repository"
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
 	"go.uber.org/zap"
 )
 
@@ -54,7 +52,7 @@ func main() {
 	addMiddlewares(router)
 
 	// init handlers
-	cardGameHandler := handler2.NewCardGameHandler(repo, logger)
+	cardGameHandler := handler.NewCardGameHandler(repo, logger)
 
 	// mount routes to handlers
 	cardGameHandler.MountRoutes(router)
